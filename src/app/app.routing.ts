@@ -8,21 +8,26 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { LoginComponent } from './examples/login/login.component';
 import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
+import {AssociationComponent} from './examples/association/association.component';
 
-const routes: Routes =[
+import {HttpClientJsonpModule, HttpClientModule, HttpHeaderResponse} from '@angular/common/http';
+
+const routes: Routes = [
     { path: '', redirectTo: 'refugees', pathMatch: 'full' },
     { path: 'refugees',                component: ComponentsComponent },
     { path: 'event',          component: NucleoiconsComponent },
     { path: 'donation',     component: LandingComponent },
     { path: 'lostfound',       component: LoginComponent },
-    { path: 'association',     component: ProfileComponent }
+    { path: 'association',     component: AssociationComponent }
 ];
 
 @NgModule({
     imports: [
         CommonModule,
         BrowserModule,
-        RouterModule.forRoot(routes)
+        RouterModule.forRoot(routes),
+        HttpClientModule,
+        HttpClientJsonpModule
     ],
     exports: [
     ],
