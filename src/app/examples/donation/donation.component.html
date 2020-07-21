@@ -1,0 +1,77 @@
+<div class="wrapper">
+    <div class="page-header page-header-small" filter-color="green">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8"
+             style="background-image: url('assets/img/donation.PNG') ;">
+        </div>
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-md-offset-3">
+
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor=" let need of needs">
+                            <app-needs [need]="need"></app-needs>
+                            <div class="button-container">
+                                <button class="btn btn-primary btn-round btn-lg" (click)="addDon(need)">Donate</button>
+                            </div>
+
+                        </li>
+                    </ul>
+
+
+                    <ul class="list-group">
+                        <li class="list-group-item" *ngFor=" let don of dons">
+                            <app-don [don]="don"></app-don>
+                            <div class="button-container">
+                                <button class="btn btn-primary btn-round btn-warning" (click)="updateDon()">Donate</button>
+                            </div>
+
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer class="footer footer-default">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="https://www.creative-tim.com">
+                            Creative Tim
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.creative-tim.com/about-us">
+                            About Us
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://blog.creative-tim.com">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/creativetimofficial/now-ui-kit/blob/master/LICENSE.md">
+                            MIT License
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="copyright">
+                &copy;
+                {{data | date: 'yyyy'}}, Designed by
+                <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by
+                <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </div>
+        </div>
+    </footer>
+</div>
