@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AssociationService} from '../../services/association.service';
+import {Association} from '../../Entity/Association';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-association',
@@ -7,66 +9,27 @@ import {AssociationService} from '../../services/association.service';
   styleUrls: ['./association.component.css']
 })
 export class AssociationComponent implements OnInit {
-  searchText = ''
-  formControls = this.associationservice.Associationform.controls;
-  submitted = false ;
-  Association: any;
-  constructor(public associationservice: AssociationService) { }
+ headers;
+  listAssociation: Array<Association>;
+  constructor(private http: HttpClient, public api: AssociationService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+      this.listAssociation = [];
+      this.getAllAssociation()
+
   }
-  onSubmit() {
-    this.submitted = true;
-    if (this.associationservice.Associationform.valid) {
-      if (this.associationservice.Associationform.get('id').value == null) {
-         this.associationservice.addAssociation(this.associationservice.Associationform.value);
-        setTimeout(function() {
-          this.refreshdata();
-        }, 200)
-        this.submitted = false;
-        this.associationservice.Associationform.reset();
-        this.associationservice.Associationform.setValue({
-          id: null,
-          nomA: '',
-        tel: '',
-        email: '',
-        description: '',
-        ville: '',
-        adresse: '',
-        nomPresident: '',
-        budget: null,
+
+  getAllAssociation() {
+      this.listAssociation = [];
+        this.api.getAllAssociations().subscribe(resp => {
+            console.log(resp);
+            const  keys = resp.headers.keys();
+            this.headers = keys.map(key =>
+            `${key}: ${resp.headers.get(key)}`);
+            for (const data of resp.body) {
+                this.listAssociation.push(data);
+            }
         });
-        this.refreshdata();
-      } else {
-        this.associationservice.updateAssociation(this.associationservice.Associationform.value);
-        this.submitted = false;
-        this.associationservice.Associationform.reset();
-        this.associationservice.Associationform.setValue({
-          id: null,
-          nomA: '',
-          tel: '',
-          email: '',
-          description: '',
-          ville: '',
-          adresse: '',
-          nomPresident: '',
-          budget: null,
-        });
-        this.refreshdata();
-      }
     }
 
-  }
-  deleteAssociation(id) {
-    this.associationservice.deleteAssociation(id)
-    setTimeout(() => {
-      this.refreshdata();
-    }, 200);
-
-  };
-  refreshdata() {
-    this.associationservice.getAssociation().subscribe((data: { }) => {
-      this.Association = data
-    })
-  }
 }

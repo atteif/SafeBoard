@@ -4,7 +4,7 @@
     </div>
     <div class="container">
         <div class="content-center">
-            <h1 class="title">Safe Board   Better Life</h1>
+            <h1 class="title">Association</h1>
             <div class="text-center">
                 <a href="#pablo" class="btn btn-primary btn-icon btn-round">
                     <i class="fab fa-facebook-square"></i>
@@ -19,80 +19,17 @@
         </div>
     </div>
 </div>
-<div class="container">
-    <div class="row">
-     <div class="col">
-        <div class="card">
-            <div class="card-body">
-                <form [formGroup]="this.associationservice.Associationform"  (ngSubmit)="onSubmit()">
-                    <div class="row">
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Nom Association" formControlName="nomA" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.nomA.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.nomA.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Telephone" formControlName="tel" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.tel.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.tel.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="email" placeholder="Email" formControlName="email" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.email.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.email.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Description" formControlName="description" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.description.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.description.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Ville" formControlName="ville" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.ville.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.ville.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Adresse" formControlName="adresse" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.adresse.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.adresse.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="text" placeholder="Nom President" formControlName="nomPresident" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.nomPresident.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.nomPresident.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <mat-form-field class="example-full-width">
-                                <input matInput type="number" placeholder="Budget" formControlName="budget" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.budget.errors}">
-                                <div class="invalid-feedback" *ngIf="submitted && formControls.budget.errors">
-                                    This field is required.</div>
-                            </mat-form-field>
-                        </div>
-                        <div class="col">
-                            <button mat-raised-button class="btn btn-success btn-round">
-                                <i class="material-icons">add</i> Add or Update Association
-                            </button>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <div >
+            <a routerLink="/addAssociation"> <button  class="btn btn-primary">Add Association</button></a>
         </div>
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let asso of listAssociation">
+                <app-association-child [association]=asso></app-association-child>
+            </li>
+        </ul>
     </div>
-    </div>
-</div>
+
+
+
 </div>
