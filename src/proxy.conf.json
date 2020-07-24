@@ -1,6 +1,12 @@
 {
     "*": {
-        "target": "http://localhost:8080/SafeDevPI/web/app_dev.php/",
+
+       
+
+
+        "target": "http://localhost/SafeDevPI/web/app_dev.php",
+      
+
         "secure": false,
         "logLevel": "debug"
     }
