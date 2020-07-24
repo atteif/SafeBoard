@@ -18,6 +18,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { from } from 'rxjs';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import {ChartsModule} from 'ng2-charts';
 
 
 const modules = [
@@ -44,7 +45,8 @@ const modules = [
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
-        ExamplesModule
+        ExamplesModule,
+        ChartsModule
     ],
     providers: [
 

@@ -1,18 +1,24 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Don} from '../../model/Don';
-import {Needs} from '../../model/Needs';
+import {ApiService} from '../../api.service';
+import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-don',
-  templateUrl: './don.component.html',
-  styleUrls: ['./don.component.css']
+    selector: 'app-don',
+    templateUrl: './don.component.html',
+    styleUrls: ['./don.component.css']
 })
 export class DonComponent implements OnInit {
-@Input()
-don: Don;
-  constructor() { }
+    @Input()
+    don: Don;
 
-  ngOnInit(): void {
-  }
+
+    constructor(private api: ApiService, private routes: Router) {
+    }
+
+    ngOnInit(): void {
+
+
+    }
 
 }

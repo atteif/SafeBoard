@@ -4,70 +4,93 @@ import {ApiService} from '../../api.service';
 import {Don} from '../../model/Don';
 import * as Rellax from 'rellax';
 import {Needs} from '../../model/Needs';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
+import {Sum} from '../../model/Sum';
 
 @Component({
-  selector: 'app-donation',
-  templateUrl: './donation.component.html',
-  styleUrls: ['./donation.component.css']
+    selector: 'app-donation',
+    templateUrl: './donation.component.html',
+    styleUrls: ['./donation.component.css']
 })
 export class DonationComponent implements OnInit {
-dons: Don[] = [];
-needs: Needs[] = [];
+    dons: Don[] = [];
+    needs: Needs[] = [];
+    nbr: Sum[] = [];
     data: Date = new Date();
-   headers;
-constructor(private http: HttpClient,
-            private api: ApiService,
-            private routes: Router) { }
+    headers;
+    private st: any;
+    private need: Needs;
+    spresp: any = [];
 
-  ngOnInit() {
-  this.getAllNeeds();
-  this.getAllData();
+    constructor(private http: HttpClient,
+                private api: ApiService,
+                private routes: Router) {
+    }
 
+    ngOnInit() {
+        this.getAllNeeds();
+        this.getAllData();
+        this.api.updateNeedsObject(this.needs);
+        const rellaxHeader = new Rellax('.rellax-header');
 
+        const body = document.getElementsByTagName('body')[0];
+        body.classList.add('landing-page');
+        const navbar = document.getElementsByTagName('nav')[0];
+        navbar.classList.add('navbar-transparent');
 
-      var rellaxHeader = new Rellax('.rellax-header');
+    }
 
-      var body = document.getElementsByTagName('body')[0];
-      body.classList.add('landing-page');
-      var navbar = document.getElementsByTagName('nav')[0];
-      navbar.classList.add('navbar-transparent');
-  }
-  getAllData() {
-    this.api.getNews()
-        .subscribe(resp => {
-          const keys = resp.headers.keys();
-          this.headers = keys.map(key =>
-              `${key}: ${resp.headers.get(key)}`);
-
-          for (const data of resp.body) {
-            this.dons.push(data);
-          }
-        });
-  }
-    getAllNeeds() {
-        this.api.getNeeds()
+    getAllData() {
+        this.api.getDons()
             .subscribe(resp => {
                 const keys = resp.headers.keys();
                 this.headers = keys.map(key =>
                     `${key}: ${resp.headers.get(key)}`);
 
                 for (const data of resp.body) {
-                    this.needs.push(data);
+                    this.dons.push(data);
                 }
             });
     }
-    ngOnDestroy(){
-        var body = document.getElementsByTagName('body')[0];
+
+    getAllNeeds() {
+        this.api.getNeed()
+            .subscribe(resp => {
+                const keys = resp.headers.keys();
+                this.headers = keys.map(key =>
+                    `${key}: ${resp.headers.get(key)}`);
+
+                for (const data of resp.body) {
+                    console.log(data);
+                    this.needs.push(data);
+                }
+            });
+
+    }
+
+    ngOnDestroy() {
+        const body = document.getElementsByTagName('body')[0];
         body.classList.remove('landing-page');
-        var navbar = document.getElementsByTagName('nav')[0];
+        const navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.remove('navbar-transparent');
     }
-    addDon( need: Needs) {
+
+    addDon(need: Needs) {
         this.api.setSelectedNeed(need);
-    console.log(need);
-    this.routes.navigateByUrl('/addDon');
+        console.log(need);
+        //  this.getValueNeed(need);
+        console.log(this.nbr);
+        /*  this.needs.forEach(e => {
+              this.getValueNeed(e)
+          });*/
+        this.routes.navigateByUrl('/addDon');
     }
 
-
+    deleteDon(need: Needs) {
+        this.api
+            .deleteNeed(need)
+            .subscribe(resp => {
+                return this.needs.push(resp);
+            });
+    }
 }
