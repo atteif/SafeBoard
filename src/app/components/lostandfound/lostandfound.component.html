@@ -1,0 +1,46 @@
+<br><br><br><br>
+<div class="container">
+
+    
+    
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <button class="btn btn-primary" (click)="onFetchPosts()">
+          Fetch Posts
+        </button>
+        |
+        <button
+          class="btn btn-danger"
+          [disabled]="loadedPosts.length < 1"
+          (click)="onClearPosts()"
+        >
+          Clear Posts
+        </button>
+        |
+        <a href="/newlostfound"><button mat-raised-button color="primary">Add Post</button></a>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <p *ngIf="loadedPosts.length < 1 && !isFetching">No posts available!</p>
+        <ul class="list-group" *ngIf="loadedPosts.length >= 1 && !isFetching">
+          <li class="list-group-item" *ngFor="let post of loadedPosts">
+            <h3>{{ post.label }}</h3>
+            <p>{{ post.update_at }}</p>
+            <p>{{ post.image }}</p> 
+            <a>
+              <img src="http://127.0.0.1:8000/uploads/{{post.image}}"  class="tn" width="200" height="200">
+            </a>
+          </li>
+        </ul>
+        <p *ngIf="isFetching && !error">Loading...</p>
+        <div class="alert alert-danger" *ngIf="error">
+          <h1>An Error Occurred!</h1>
+          <p>{{ error }}</p>
+          <button class="btn btn-danger" (click)="onHandleError()">Okay</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
