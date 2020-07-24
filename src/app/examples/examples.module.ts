@@ -12,10 +12,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
 
 import { AssociationComponent } from './association/association.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
+
 import { AssociationChildComponent } from './association-child/association-child.component';
 import { AddAssociationComponent } from './add-association/add-association.component';
-import {RouterModule} from '@angular/router';
+
 
 
 import { DonationComponent } from './donation/donation.component';
@@ -43,7 +43,7 @@ import {ChartsModule} from 'ng2-charts';
 
         ReactiveFormsModule,
         MatFormFieldModule,
-        RouterModule
+        RouterModule,
 
         NgCircleProgressModule,
         RouterModule,
@@ -61,7 +61,7 @@ import {ChartsModule} from 'ng2-charts';
 
         AssociationComponent,
         AssociationChildComponent,
-        AddAssociationComponent
+        AddAssociationComponent,
 
 
         DonationComponent,

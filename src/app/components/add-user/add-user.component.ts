@@ -15,10 +15,11 @@ export class AddUserComponent implements OnInit {
   spresp: any;
   focus;
   focus1;
+  submitted = false;
   constructor(public api: UsersService, private router: Router) { }
 
   ngOnInit(): void {
-    this.user = new Users();
+
   }
   addUser() {
 
@@ -38,4 +39,8 @@ login() {
   this.router.navigateByUrl('/login');
 
 }
+  onSubmit() {
+    this.submitted = true;
+    this.addUser();
+  }
 }

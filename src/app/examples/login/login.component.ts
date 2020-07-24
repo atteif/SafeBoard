@@ -52,10 +52,11 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-       if(this.loggedUsers.filter(user => user.login== this.user.login).filter(user => user.password == this.user.password).length != 0) {
+       if (this.loggedUsers.filter(user => user.login== this.user.login).filter(user => user.password == this.user.password).length != 0) {
             var navbar = document.getElementsByTagName('nav')[0];
             navbar.hidden = false;
             this.service.setLoggedUser(this.user);
+            console.log(this.user);
             this.routes.navigateByUrl('/profile');
 
         } else {

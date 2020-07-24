@@ -3,6 +3,8 @@ import {Association} from '../../model/Association';
 import {AssociationService} from '../../services/association.service';
 import {Reclamation} from '../../model/Reclamation';
 import {Router} from '@angular/router';
+import {UsersService} from '../../services/users.service';
+import {Users} from '../../components/model/Users';
 
 @Component({
   selector: 'app-association-child',
@@ -12,8 +14,9 @@ import {Router} from '@angular/router';
 export class AssociationChildComponent implements OnInit {
   @Input() association: Association = new Association();
   rec: Reclamation = new Reclamation();
+  user: Users = new Users();
   spresp: any;
-  constructor(public api: AssociationService, private routes: Router) { }
+  constructor(public api: AssociationService, private service: UsersService, private routes: Router) { }
 
   ngOnInit(): void {
 
