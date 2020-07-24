@@ -77,12 +77,6 @@ export class DonationComponent implements OnInit {
 
     addDon(need: Needs) {
         this.api.setSelectedNeed(need);
-        console.log(need);
-        //  this.getValueNeed(need);
-        console.log(this.nbr);
-        /*  this.needs.forEach(e => {
-              this.getValueNeed(e)
-          });*/
         this.routes.navigateByUrl('/addDon');
     }
 

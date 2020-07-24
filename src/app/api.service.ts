@@ -13,7 +13,7 @@ export class ApiService {
   headers;
 
     private _need: Needs = new Needs();
-   spresp: any;
+   spresp: any[];
   nbr: Sum[] = [];
 
     constructor(private http: HttpClient) {
@@ -45,7 +45,7 @@ export class ApiService {
 
     public getNeed(): Observable<HttpResponse<Needs[]>> {
         return this.http.get<Needs[]>(
-            `http://localhost/SafeDevPI/web/app_dev.php/getNeed`, {observe: 'response'});
+            `http://localhost/SafeDevPI/web/app_dev.php/getNeedValue`, {observe: 'response'});
     }
 
     addDon(don: Don): Observable<Don> {
@@ -90,9 +90,13 @@ export class ApiService {
                         console.log(need);
                         this.nbr.forEach(e => {
                             if (e.nb > need.value) {
+                                const i = this.nbr.indexOf(e);
+                                this.nbr.splice(i, 1);
                                 console.log(need);
                                 this.deleteNeedsFromList(need);
                             }
+                            const i = this.nbr.indexOf(e);
+                            this.nbr.splice(i, 1);
                         });
                     }
                 });

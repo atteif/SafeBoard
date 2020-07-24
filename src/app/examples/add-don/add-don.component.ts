@@ -11,7 +11,7 @@ import {Sum} from '../../model/Sum';
     styleUrls: ['./add-don.component.css']
 })
 export class AddDonComponent implements OnInit {
-    spresp: any;
+    spresp: any[];
     needs: Needs[] = [];
     don: Don = new Don();
     need: Needs;

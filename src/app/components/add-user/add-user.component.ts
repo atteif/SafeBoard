@@ -12,10 +12,12 @@ import {UsersService} from '../../services/users.service';
 export class AddUserComponent implements OnInit {
   user: Users = new Users();
   spresp: any;
-
+  focus;
+  focus1;
   constructor(public api: UsersService, private router: Router) { }
 
   ngOnInit(): void {
+    this.user =new Users();
   }
   addUser() {
 
@@ -24,5 +26,15 @@ export class AddUserComponent implements OnInit {
     });
     console.log(this.user);
   }
+login() {
+  console.log(this.user);
+  this.user.role_type = "admin";
+  this.user.login=this.user.last_name;
 
+  this.api.addUser(this.user).subscribe(resp => {
+      return this.spresp.push(resp);
+    });
+  this.router.navigateByUrl('/login');
+
+}
 }
