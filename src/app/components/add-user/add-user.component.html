@@ -1,71 +1,115 @@
-<div class="page-header page-header-small">
-    <div class="page-header-image rellax-header" data-rellax-speed="-8"
-         style="background-image: url('../../../assets/img/bg6.jpg');">
-    </div>
+<div class="page-header" filter-color="green">
+    <div class="page-header-image" style="background-image:url(assets/img/login.jpg)"></div>
     <div class="container">
-        <div class="content-center">
-            <h1 class="title">Safe Board Better Life</h1>
-            <div class="text-center">
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
-                    <i class="fab fa-google-plus"></i>
-                </a>
+        <div class="col-md-4 content-center">
+            <div class="card card-login card-plain">
+
+                <div class="header header-primary text-center">
+                    <div class="logo-container">
+                        <img src="assets/img/now-logo.png" alt="">
+                    </div>
+                </div>
+                <div class="content">
+                    <form #f="ngForm">
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" value="firstname" placeholder="First Name..." (focus)="focus=true"
+                                    [(ngModel)]="user.first_name"
+                                   [ngModelOptions]="{standalone: true}" required #l="ngModel">
+                            <div class="alert alert-danger" *ngIf="l.invalid">
+                                <div *ngIf="l.errors?.required">Please enter your first Name</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Last Name..." (focus)="focus=true"
+                                    [(ngModel)]="user.last_name"
+                                   [ngModelOptions]="{standalone: true}" required #la="ngModel">
+                            <div class="alert alert-danger" *ngIf="la.invalid">
+                                <div *ngIf="la.errors?.required">Please enter your Last Name</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Email Address..." (focus)="focus=true"
+                                    [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"
+                                   required #a="ngModel">
+                            <div class="alert alert-danger" *ngIf="a.invalid">
+                                <div *ngIf="a.errors?.required">Please enter your email Address</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Tel..." (focus)="focus=true"
+                                    [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}"
+                                   required #t="ngModel">
+                            <div class="alert alert-danger" *ngIf="t.invalid">
+                                <div *ngIf="t.errors?.required">Please enter your telephone number</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
+                            </div>
+                            <input type="text" data-color="white" class="form-control" placeholder="Address...."
+                                    [(ngModel)]="user.adresse" [ngModelOptions]="{standalone: true}"
+                                   required #ha="ngModel"/>
+                            <div class="alert alert-danger" *ngIf="ha.invalid">
+                                <div *ngIf="ha.errors?.required">Please enter your home address</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus1===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
+                            </div>
+                            <input type="password" placeholder="Confirm Password..." class="form-control"
+                                   (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="user.password"
+                                   [ngModelOptions]="{standalone: true}" required #p="ngModel">
+                            <div class="alert alert-danger" *ngIf="p.invalid">
+                                <div *ngIf="p.errors?.required">Please confirm your password</div>
+                            </div>
+                        </div>
+                        <div class="input-group form-group-no-border input-lg"
+                             [ngClass]="{'input-group-focus':focus1===true}">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="now-ui-icons text_caps-small"></i></span>
+                            </div>
+                            <input type="password" placeholder="Confirm Password..." class="form-control"
+                                   (focus)="focus1=true" (blur)="focus1=false" [(ngModel)]="user.password"
+                                   [ngModelOptions]="{standalone: true}" required #p="ngModel">
+                            <div class="bs-popover-top" *ngIf="p.invalid">
+                                <div *ngIf="p.errors?.required">Please confirm your password</div>
+                            </div>
+                        </div>
+
+                        <div class="footer text-center">
+                            <button [disabled]="f.errors?.required" class="btn btn-primary btn-round btn-lg btn-block"
+                                    (click)="login()" routerLink="/login">Join Safe Board Community
+                            </button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <form #f="ngForm">
-        <div class="form-group">
-            <div class="form-group">
-                <label>User name</label>
-                <input type="text" class="form-control" name="username" [(ngModel)]="user.username" #a="ngModel"
-                       required minlength="3">
-                <div class="alert-danger" *ngIf="a.invalid">
-                    <p *ngIf="a.errors.required">username is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Login</label>
-                <input type="text" class="form-control" name="login" [(ngModel)]="user.login" #n="ngModel"
-                       required minlength="3">
-                <div class="alert-danger" *ngIf="n.invalid">
-                    <p *ngIf="n.errors.required">login is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" class="form-control" name="email" [(ngModel)]="user.email" #t="ngModel"
-                       required minlength="3">
-                <div class="alert-danger" *ngIf="t.invalid">
-                    <p *ngIf="t.errors.required">email is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #e="ngModel"
-                       required minlength="3">
-                <div class="alert-danger" *ngIf="e.invalid">
-                    <p *ngIf="e.errors.required">password is required</p>
-                </div>
-            </div>
-            <div class="form-group">
-                <label>Role</label>
-                <input type="text" class="form-control" name="role" [(ngModel)]="user.role" #ad="ngModel"
-                       required minlength="3">
-                <div class="alert-danger" *ngIf="ad.invalid">
-                    <p *ngIf="ad.errors.required">role is required</p>
-                </div>
-            </div>
+    <footer class="footer">
+        <div class="container">
+
 
         </div>
-        <button type="submit" class="btn btn-success" [disabled]="f.invalid" (click)="addUser()"
-                routerLink="/users">Subscribe
-        </button>
-    </form>
+    </footer>
 </div>

@@ -15,11 +15,10 @@ export class UsersService {
     return this.http.get<Users[]>(
         `http://localhost/SafeDevPI/web/app_dev.php/getAllUsers`, {observe: 'response'});
   }
-  addUser(user: Users): Observable<any> {
-    const headers = new Headers({'Content-Type': 'application/json'});
-    return this.http.post('http://localhost/SafeDevPI/web/app_dev.php/addUser', user);
+  addUser(user: Users): Observable<Users> {
+    return this.http.post<Users>('http://localhost/SafeDevPI/web/app_dev.php/addUser', user);
   }
-  getSelectedNeed(): Users {
+  getLoggedUser(): Users {
     const temp = this._user;
     this.clearData();
     return temp;
@@ -29,7 +28,11 @@ export class UsersService {
     this._user = undefined;
   }
 
-  setSelectedNeed(user) {
+  setLoggedUser(user) {
     this._user = user;
+  }
+  getUserByUsername(user: Users): Observable<HttpResponse<Users[]>> {
+    return this.http.get<Users[]>(
+        `http://localhost/SafeDevPI/web/app_dev.php/getAllUsers/` + user.login, {observe: 'response'});
   }
 }
