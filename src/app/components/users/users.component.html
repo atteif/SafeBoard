@@ -1,0 +1,30 @@
+<div class="wrapper">
+    <div class="page-header page-header-small">
+        <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('assets/img/bg6.jpg');">
+        </div>
+        <div class="container">
+            <div class="content-center">
+                <h1 class="title">User</h1>
+                <div class="text-center">
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-facebook-square"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                        <i class="fab fa-google-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <ul>
+            <li  *ngFor="let e of users">
+                <app-users-child [user]="e"></app-users-child>
+
+            </li>
+        </ul>
+    </div>
+</div>

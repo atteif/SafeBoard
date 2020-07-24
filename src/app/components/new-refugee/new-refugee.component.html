@@ -1,0 +1,116 @@
+<div class="page-header page-header-small">
+    <div class="page-header-image rellax-header" data-rellax-speed="-8" style="background-image: url('../../../assets/img/bg6.jpg');">
+    </div>
+    <div class="container">
+        <div class="content-center">
+            <h1 class="title">Safe Board   Better Life</h1>
+            <div class="text-center">
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-google-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="container">
+    <h1>Add new refugee</h1>
+    <form  #f="ngForm">
+        <div class="form-group">
+            <div class="form-group">
+                <label>Refugee Firstname</label>
+                <input type="text" class="form-control" name="firstname" [(ngModel)]="ref.firstname" #a="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="a.invalid">
+                    <p *ngIf="a.errors.required">firstname is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Refugee Lastname</label>
+                <input type="text" class="form-control" name="lastname" [(ngModel)]="ref.lastname" #n="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="n.invalid">
+                    <p *ngIf="n.errors.required">lastname is required</p>
+                </div>
+            </div>
+            <div>
+                <label>Location</label>
+                <select name="category" class="form-control" #cat="ngModel" [(ngModel)]="ref.location" required>
+                    <option value="Ariana">Ariana</option>
+                    <option value="Béja"> Béja</option>
+                    <option value="Ben Arous">Ben Arous</option>
+                    <option value="Gabes">Gabes</option>
+                    <option value="Bizerte">Bizerte</option>
+                    <option value="Gafsa"> Gafsa</option>
+                    <option value="Jendouba">Jendouba</option>
+                    <option value="Kairouan">Kairouan</option>
+                    <option value="Kasserine">Kasserine</option>
+                    <option value="Kébili"> Kébili</option>
+                    <option value="Kef">Kef</option>
+                    <option value="Mahdia">Mahdia</option>
+                    <option value="Manouba">Manouba</option>
+                    <option value="Medenine"> Medenine</option>
+                    <option value="Monastir">Monastir</option>
+                    <option value="Nabeul">Nabeul</option>
+                    <option value="Sfax"> Sfax</option>
+                    <option value="Sidi Bouzid">Sidi Bouzid</option>
+                    <option value="Siliana">Siliana</option>
+                    <option value="Sousse">Sousse</option>
+                    <option value="Tataouine"> Tataouine</option>
+                    <option value="Tozeur">Tozeur</option>
+                    <option value="Tunis">Tunis</option>
+                    <option value="Zaghouan">Zaghouan</option>
+                    <option value="Sousse">Sousse</option>
+
+                </select>
+                <div class="alert alert-danger" *ngIf="cat.invalid">
+                  Location is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="text" class="form-control" name="age" [(ngModel)]="ref.age" #e="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="e.invalid">
+                    <p *ngIf="e.errors.required">Location is required</p>
+                </div>
+            </div>
+            <div>
+                <label>Needs</label>
+                <select name="needs" class="form-control" #cat="ngModel" [(ngModel)]="ref.needs" required>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Money"> Money</option>
+                    <option value="Food">Food</option>
+                    <option value="Rental">Rental</option>
+
+                </select>
+                <div class="alert alert-danger" *ngIf="cat.invalid">
+                    Category is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="ref.email" #v="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="v.invalid">
+                    <p *ngIf="v.errors.required">email is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Mobile</label>
+                <input type="text" class="form-control" name="mobile" [(ngModel)]="ref.mobile" #d="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="d.invalid">
+                    <p *ngIf="d.errors.required">phone number is required</p>
+                </div>
+            </div>
+        </div>
+        <button type ="button" class="btn btn-success" [disabled]="f.invalid" (click)="addRefugee()" routerLink="refugee" >Submit</button>
+    </form>
+</div>

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NouisliderModule } from 'ng2-nouislider';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { RouterModule } from '@angular/router';
@@ -22,6 +22,18 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { from } from 'rxjs';
 import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlostandfound.component';
+
+
+import { RefugeeComponent } from './refugee/refugee.component';
+
+import { RefugeChildComponent } from './refuge-child/refuge-child.component';
+import { NewRefugeeComponent } from './new-refugee/new-refugee.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import {ChartsModule} from 'ng2-charts';
+import { EventComponent } from './event/event.component';
+import { EventChildComponent } from './event-child/event-child.component';
+import { AddEventComponent } from './add-event/add-event.component';
+
 import { UsersComponent } from './users/users.component';
 import { UsersChildComponent } from './users-child/users-child.component';
 import { AddUserComponent } from './add-user/add-user.component';
@@ -39,11 +51,16 @@ import { AddUserComponent } from './add-user/add-user.component';
         MatNativeDateModule,
         MatFormFieldModule,
         MatInputModule,
-        MatDatepickerModule ,        
+        MatDatepickerModule,
+        MatSelectModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        ChartsModule,
+        MatDatepickerModule ,
          MatSelectModule ,
          MatButtonModule
         // MatLabel
-      ],
+    ],
     declarations: [
         ComponentsComponent,
         BasicelementsComponent,
@@ -54,10 +71,22 @@ import { AddUserComponent } from './add-user/add-user.component';
         LostandfoundComponent,
         NgbdModalBasic,
         NewlostandfoundComponent,
+
+
+        RefugeeComponent,
+
+        RefugeChildComponent,
+
+        NewRefugeeComponent,
+
+        BarChartComponent,
+        EventComponent,
+        EventChildComponent,
+        AddEventComponent,
         UsersComponent,
         UsersChildComponent,
         AddUserComponent
     ],
-    exports:[ ComponentsComponent ]
+    exports: [ ComponentsComponent ]
 })
 export class ComponentsModule { }
