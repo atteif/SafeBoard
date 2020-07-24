@@ -22,6 +22,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { from } from 'rxjs';
 import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlostandfound.component';
+import { EventComponent } from './event/event.component';
+import { EventChildComponent } from './event-child/event-child.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { UsersComponent } from './users/users.component';
+import { UsersChildComponent } from './users-child/users-child.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
     imports: [
@@ -36,7 +42,7 @@ import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlost
         MatNativeDateModule,
         MatFormFieldModule,
         MatInputModule,
-        MatDatepickerModule ,        
+        MatDatepickerModule ,
          MatSelectModule ,
          MatButtonModule
         // MatLabel
@@ -50,8 +56,14 @@ import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlost
         NotificationComponent,
         LostandfoundComponent,
         NgbdModalBasic,
-        NewlostandfoundComponent
+        NewlostandfoundComponent,
+        EventComponent,
+        EventChildComponent,
+        AddEventComponent,
+        UsersComponent,
+        UsersChildComponent,
+        AddUserComponent
     ],
-    exports:[ ComponentsComponent ]
+    exports: [ ComponentsComponent ]
 })
 export class ComponentsModule { }
