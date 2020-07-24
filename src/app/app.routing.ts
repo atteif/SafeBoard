@@ -10,6 +10,12 @@ import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { LostandfoundComponent } from './components/lostandfound/lostandfound.component';
 import { NewlostandfoundComponent } from './components/lostandfound/newlostandfound/newlostandfound.component';
+import {RefugeeComponent} from './components/refugee/refugee.component';
+import {NewRefugeeComponent} from './components/new-refugee/new-refugee.component';
+
+const routes: Routes = [
+    { path: '', redirectTo: 'refugees', pathMatch: 'full' },
+
 import {DonationComponent} from './examples/donation/donation.component';
 import {AddDonComponent} from './examples/add-don/add-don.component';
 import {NeedsChartComponent} from './examples/needs-chart/needs-chart.component';
@@ -21,8 +27,8 @@ import {AddUserComponent} from './components/add-user/add-user.component';
 
 const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' },
-    { path: 'refugees',                component: ComponentsComponent },
 
+    { path: 'refugees',                component: ComponentsComponent },
     { path: 'event',          component: NucleoiconsComponent },
     { path: 'donation',     component: DonationComponent },
     { path: 'event',          component: EventComponent },
@@ -31,6 +37,10 @@ const routes: Routes = [
     { path: 'newlostfound',       component: NewlostandfoundComponent },
     { path: 'association',     component: ProfileComponent },
     { path: 'aaaa',       component: LostandfoundComponent },
+
+    { path: 'refugee',       component: RefugeeComponent },
+    { path: 'newRefugee',       component: NewRefugeeComponent }
+
     { path: 'addDon',       component: AddDonComponent },
     { path: 'login',       component: LoginComponent },
     { path: 'chart',       component: NeedsChartComponent }

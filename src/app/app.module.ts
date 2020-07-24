@@ -16,6 +16,7 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatButtonModule} from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { from } from 'rxjs';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import {ChartsModule} from 'ng2-charts';
@@ -46,6 +47,7 @@ const modules = [
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
+        GooglePlaceModule,
         ChartsModule
     ],
     providers: [
