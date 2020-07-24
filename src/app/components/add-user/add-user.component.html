@@ -1,0 +1,71 @@
+<div class="page-header page-header-small">
+    <div class="page-header-image rellax-header" data-rellax-speed="-8"
+         style="background-image: url('../../../assets/img/bg6.jpg');">
+    </div>
+    <div class="container">
+        <div class="content-center">
+            <h1 class="title">Safe Board Better Life</h1>
+            <div class="text-center">
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#pablo" class="btn btn-primary btn-icon btn-round">
+                    <i class="fab fa-google-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <form #f="ngForm">
+        <div class="form-group">
+            <div class="form-group">
+                <label>User name</label>
+                <input type="text" class="form-control" name="username" [(ngModel)]="user.username" #a="ngModel"
+                       required minlength="3">
+                <div class="alert-danger" *ngIf="a.invalid">
+                    <p *ngIf="a.errors.required">username is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Login</label>
+                <input type="text" class="form-control" name="login" [(ngModel)]="user.login" #n="ngModel"
+                       required minlength="3">
+                <div class="alert-danger" *ngIf="n.invalid">
+                    <p *ngIf="n.errors.required">login is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" [(ngModel)]="user.email" #t="ngModel"
+                       required minlength="3">
+                <div class="alert-danger" *ngIf="t.invalid">
+                    <p *ngIf="t.errors.required">email is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="password" [(ngModel)]="user.password" #e="ngModel"
+                       required minlength="3">
+                <div class="alert-danger" *ngIf="e.invalid">
+                    <p *ngIf="e.errors.required">password is required</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Role</label>
+                <input type="text" class="form-control" name="role" [(ngModel)]="user.role" #ad="ngModel"
+                       required minlength="3">
+                <div class="alert-danger" *ngIf="ad.invalid">
+                    <p *ngIf="ad.errors.required">role is required</p>
+                </div>
+            </div>
+
+        </div>
+        <button type="submit" class="btn btn-success" [disabled]="f.invalid" (click)="addUser()"
+                routerLink="/users">Subscribe
+        </button>
+    </form>
+</div>
