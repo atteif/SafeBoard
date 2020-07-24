@@ -25,18 +25,8 @@
                         </div>
 
 
-                        <div class="form-group">
-                            <label>Donnator</label>
-                            <input name="period" type="number" class="form-control" [(ngModel)]="don.id_donnator"
-                                   #p="ngModel"
-                                   required>
-                            <div class="alert alert-danger" *ngIf="p.invalid">
-                            </div>
-                            <div class="alert alert-danger" *ngIf="p.value < 3 || p.value > 9 ">
-                            </div>
-                        </div>
                         <button class="btn btn-outline-info" (click)="addDon()"
-                                [disabled]="f.invalid || p.value < 3 || p.value > 9 " >Add
+                                [disabled]="f.invalid " >Add
                         </button>
                     </form>
 

@@ -31,10 +31,6 @@ import { LostandfoundComponent } from './components/lostandfound/lostandfound.co
 import { NewlostandfoundComponent } from './components/lostandfound/newlostandfound/newlostandfound.component';
 import {RefugeeComponent} from './components/refugee/refugee.component';
 import {NewRefugeeComponent} from './components/new-refugee/new-refugee.component';
-
-const routes: Routes = [
-    { path: '', redirectTo: 'refugees', pathMatch: 'full' },
-
 import {DonationComponent} from './examples/donation/donation.component';
 import {AddDonComponent} from './examples/add-don/add-don.component';
 import {NeedsChartComponent} from './examples/needs-chart/needs-chart.component';
@@ -56,7 +52,7 @@ const routes: Routes = [
     { path: 'aaaa',       component: LostandfoundComponent },
 
     { path: 'refugee',       component: RefugeeComponent },
-    { path: 'newRefugee',       component: NewRefugeeComponent }
+    { path: 'newRefugee',       component: NewRefugeeComponent },
 
     { path: 'addDon',       component: AddDonComponent },
     { path: 'login',       component: LoginComponent },

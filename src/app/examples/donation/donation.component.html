@@ -15,12 +15,9 @@
                 <div class="col-xs-12 col-md-6 col-md-offset-3">
 
                     <ul class="rounded-circle align-middle"  >
-                        <li class="list-group-item" *ngFor=" let need of needs">
-                            <app-needs  [need]="need" ></app-needs>
+                        <li  class="list-group-item" *ngFor=" let need of needs">
+                            <app-needs  [need]="need"></app-needs>
 
-                            <div class="button-container">
-                                <button class="btn btn-primary btn-round btn-lg" (click)="addDon(need)">Donate</button>
-                            </div>
                         </li>
                     </ul>
 
