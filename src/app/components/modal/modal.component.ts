@@ -2,9 +2,11 @@ import {Component, Input} from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
+    // tslint:disable-next-line:component-selector
   selector: 'ngbd-modal-component',
   templateUrl: './modal.component.html'
 })
+// tslint:disable-next-line:component-class-suffix
 export class NgbdModalBasic {
     closeResult: string;
 
