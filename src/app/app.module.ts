@@ -18,6 +18,8 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { from } from 'rxjs';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import {ChartsModule} from 'ng2-charts';
 
 
 const modules = [
@@ -27,7 +29,6 @@ const modules = [
     declarations: [
         AppComponent,
         NavbarComponent
-
     ],
     imports: [
         NgbModule,
@@ -46,7 +47,8 @@ const modules = [
         AppRoutingModule,
         ComponentsModule,
         ExamplesModule,
-        GooglePlaceModule
+        GooglePlaceModule,
+        ChartsModule
     ],
     providers: [
 

@@ -28,6 +28,12 @@ import { RefugeChildComponent } from './refuge-child/refuge-child.component';
 import { NewRefugeeComponent } from './new-refugee/new-refugee.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {ChartsModule} from 'ng2-charts';
+import { EventComponent } from './event/event.component';
+import { EventChildComponent } from './event-child/event-child.component';
+import { AddEventComponent } from './add-event/add-event.component';
+import { UsersComponent } from './users/users.component';
+import { UsersChildComponent } from './users-child/users-child.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 @NgModule({
     imports: [
@@ -47,6 +53,9 @@ import {ChartsModule} from 'ng2-charts';
         MatButtonModule,
         ReactiveFormsModule,
         ChartsModule,
+        MatDatepickerModule ,
+         MatSelectModule ,
+         MatButtonModule
         // MatLabel
     ],
     declarations: [
@@ -65,7 +74,13 @@ import {ChartsModule} from 'ng2-charts';
 
         NewRefugeeComponent,
 
-        BarChartComponent
+        BarChartComponent,
+        EventComponent,
+        EventChildComponent,
+        AddEventComponent,
+        UsersComponent,
+        UsersChildComponent,
+        AddUserComponent
     ],
     exports: [ ComponentsComponent ]
 })
