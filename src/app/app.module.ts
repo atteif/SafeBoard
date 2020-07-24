@@ -1,6 +1,6 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'
@@ -38,15 +38,19 @@ const modules = [
         MatFormFieldModule,
         MatSelectModule,
         MatButtonModule,
-        // MatLabel,
+        ReactiveFormsModule,
         BrowserAnimationsModule,
         HttpClientModule,
         FormsModule,
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
+
+        ExamplesModule
+
         ExamplesModule,
         ChartsModule
+
     ],
     providers: [
 

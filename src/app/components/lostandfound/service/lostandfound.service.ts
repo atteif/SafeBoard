@@ -27,18 +27,18 @@ export class LostandfoundService {
   }
 
 
-  createAndStorePost(form :FormData ) {
-   
+  createAndStorePost(form : FormData ) {
+
     const headers = { 'content-type': 'json'};
     this.http
       .post<any>(
-        'http://127.0.0.1:8000/file/new', form 
-        
+        'http://127.0.0.1:8000/file/new', form
+
       )
       .subscribe(
         responseData => {
           console.log(responseData);
-          
+
         },
         error => {
           this.error.next(error.message);
@@ -46,7 +46,7 @@ export class LostandfoundService {
       );
   }
 
-  
+
 
 
 

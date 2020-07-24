@@ -10,6 +10,14 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
+
+import { AssociationComponent } from './association/association.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { AssociationChildComponent } from './association-child/association-child.component';
+import { AddAssociationComponent } from './add-association/add-association.component';
+import {RouterModule} from '@angular/router';
+
+
 import { DonationComponent } from './donation/donation.component';
 import { DonComponent } from './don/don.component';
 import {NgCircleProgressModule} from 'ng-circle-progress';
@@ -21,6 +29,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { NeedsChartComponent } from './needs-chart/needs-chart.component';
 import {ChartsModule} from 'ng2-charts';
 
+
 @NgModule({
     imports: [
         CommonModule,
@@ -31,23 +40,36 @@ import {ChartsModule} from 'ng2-charts';
         AgmCoreModule.forRoot({
             apiKey: 'YOUR_KEY_HERE'
         }),
+
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        RouterModule
+
         NgCircleProgressModule,
         RouterModule,
         MatFormFieldModule,
         MatDatepickerModule,
         ReactiveFormsModule,
         ChartsModule
+
     ],
     declarations: [
         LandingComponent,
         LoginComponent,
         ExamplesComponent,
         ProfileComponent,
+
+        AssociationComponent,
+        AssociationChildComponent,
+        AddAssociationComponent
+
+
         DonationComponent,
         DonComponent,
         NeedsComponent,
         AddDonComponent,
         NeedsChartComponent
+
     ]
 })
 export class ExamplesModule { }

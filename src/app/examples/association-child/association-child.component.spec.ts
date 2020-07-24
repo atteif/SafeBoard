@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LostandfoundComponent } from './lostandfound.component';
+import { AssociationChildComponent } from './association-child.component';
 
-describe('LostandfoundComponent', () => {
-  let component: LostandfoundComponent;
-  let fixture: ComponentFixture<LostandfoundComponent>;
+describe('AssociationChildComponent', () => {
+  let component: AssociationChildComponent;
+  let fixture: ComponentFixture<AssociationChildComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LostandfoundComponent ]
+      declarations: [ AssociationChildComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LostandfoundComponent);
+    fixture = TestBed.createComponent(AssociationChildComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
