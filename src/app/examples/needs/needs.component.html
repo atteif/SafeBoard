@@ -1,6 +1,8 @@
 <tr>
-    <td data-color="black">{{need.value}}</td>
-    <td data-color="black">{{need.category}}</td>
-    <app-needs-chart [need]="need"></app-needs-chart>
+
+
+    <app-needs-chart [hidden]="need.is_done" [need]="need"></app-needs-chart>
+
+        <button [hidden]="need.is_done" class="btn btn-primary btn-round btn-lg" (click)="addDon(need)">Donate</button>
 
 </tr>
