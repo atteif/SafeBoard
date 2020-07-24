@@ -11,6 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ExamplesComponent } from './examples.component';
 import { AssociationComponent } from './association/association.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { AssociationChildComponent } from './association-child/association-child.component';
+import { AddAssociationComponent } from './add-association/add-association.component';
+import {RouterModule} from '@angular/router';
+
 
 @NgModule({
     imports: [
@@ -22,14 +27,19 @@ import { AssociationComponent } from './association/association.component';
         AgmCoreModule.forRoot({
             apiKey: 'YOUR_KEY_HERE'
         }),
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        MatFormFieldModule,
+        RouterModule
     ],
     declarations: [
         LandingComponent,
         LoginComponent,
         ExamplesComponent,
         ProfileComponent,
-        AssociationComponent
+        AssociationComponent,
+        AssociationChildComponent,
+        AddAssociationComponent
+
     ]
 })
 export class ExamplesModule { }
