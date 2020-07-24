@@ -1,6 +1,7 @@
-import {Categorie} from './Categorie';
+
 
 export class Association {
+    id: number;
     nom_a: string;
     tel: string;
     email: string;
@@ -9,5 +10,7 @@ export class Association {
     adresse: string;
     nom_president: string;
     budget: number;
-   categorie: Categorie;
+   categorie: string;
+   nombre_reclamation: number;
+    is_reclaimed: boolean;
 }

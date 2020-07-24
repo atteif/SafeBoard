@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Association} from '../../Entity/Association';
+import {Association} from '../../model/Association';
 import {HttpClient} from '@angular/common/http';
 import {AssociationService} from '../../services/association.service';
 import {Router} from '@angular/router';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-add-association',
@@ -10,24 +11,38 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-association.component.css']
 })
 export class AddAssociationComponent implements OnInit {
-asoo: Association;
-submitted = false;
-  constructor(private http: HttpClient, public api: AssociationService, private router: Router) { }
+    headers;
+asoo: Association = new Association();
+spresp: any;
 
+submitted = false;
+assoForm = new FormGroup({
+    'nom_a' : new FormControl('', Validators.required),
+    'tel' : new FormControl('', Validators.required),
+    'email' : new FormControl('', Validators.required),
+    'description' : new FormControl('', Validators.required),
+    'ville' : new FormControl('', Validators.required),
+    'adresse' : new FormControl('', Validators.required),
+    'nom_president' : new FormControl('', Validators.required),
+    'budget' : new FormControl('', Validators.required),
+    'categorie' : new FormControl('', Validators.required)
+});
+
+  constructor(public api: AssociationService, private router: Router) { }
   ngOnInit(): void {
 
-   this.addAssociation();
   }
 addAssociation() {
-
-    this.api.addAssociation(this.asoo).subscribe(res => console.log('Association créée'));
-    this.asoo = new Association();
+    this.api.addAssociation(this.asoo).subscribe();
+    console.log(this.asoo);
+    this.goToList();
 }
 onSubmit() {
 this.submitted = true;
 this.addAssociation();
 }
 goToList() {
-      this.router.navigate(['/association']);
+
+      this.router.navigateByUrl('/association').then();
 }
 }
