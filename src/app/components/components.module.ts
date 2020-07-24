@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NouisliderModule } from 'ng2-nouislider';
 import { JwBootstrapSwitchNg2Module } from 'jw-bootstrap-switch-ng2';
 import { RouterModule } from '@angular/router';
@@ -22,6 +22,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule} from '@angular/material/button';
 import { from } from 'rxjs';
 import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlostandfound.component';
+import { RefugeeComponent } from './refugee/refugee.component';
+
+import { RefugeChildComponent } from './refuge-child/refuge-child.component';
+import { NewRefugeeComponent } from './new-refugee/new-refugee.component';
+import { BarChartComponent } from './bar-chart/bar-chart.component';
+import {ChartsModule} from 'ng2-charts';
 
 @NgModule({
     imports: [
@@ -36,11 +42,13 @@ import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlost
         MatNativeDateModule,
         MatFormFieldModule,
         MatInputModule,
-        MatDatepickerModule ,        
-         MatSelectModule ,
-         MatButtonModule
+        MatDatepickerModule,
+        MatSelectModule,
+        MatButtonModule,
+        ReactiveFormsModule,
+        ChartsModule,
         // MatLabel
-      ],
+    ],
     declarations: [
         ComponentsComponent,
         BasicelementsComponent,
@@ -50,8 +58,15 @@ import { NewlostandfoundComponent } from './lostandfound/newlostandfound/newlost
         NotificationComponent,
         LostandfoundComponent,
         NgbdModalBasic,
-        NewlostandfoundComponent
+        NewlostandfoundComponent,
+        RefugeeComponent,
+
+        RefugeChildComponent,
+
+        NewRefugeeComponent,
+
+        BarChartComponent
     ],
-    exports:[ ComponentsComponent ]
+    exports: [ ComponentsComponent ]
 })
 export class ComponentsModule { }

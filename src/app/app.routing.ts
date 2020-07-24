@@ -10,8 +10,10 @@ import { ProfileComponent } from './examples/profile/profile.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { LostandfoundComponent } from './components/lostandfound/lostandfound.component';
 import { NewlostandfoundComponent } from './components/lostandfound/newlostandfound/newlostandfound.component';
+import {RefugeeComponent} from './components/refugee/refugee.component';
+import {NewRefugeeComponent} from './components/new-refugee/new-refugee.component';
 
-const routes: Routes =[
+const routes: Routes = [
     { path: '', redirectTo: 'refugees', pathMatch: 'full' },
     { path: 'refugees',                component: ComponentsComponent },
     { path: 'event',          component: NucleoiconsComponent },
@@ -19,7 +21,9 @@ const routes: Routes =[
     { path: 'lostfound',       component: LostandfoundComponent },
     { path: 'newlostfound',       component: NewlostandfoundComponent },
     { path: 'association',     component: ProfileComponent },
-    { path: 'aaaa',       component: LostandfoundComponent }
+    { path: 'aaaa',       component: LostandfoundComponent },
+    { path: 'refugee',       component: RefugeeComponent },
+    { path: 'newRefugee',       component: NewRefugeeComponent }
 ];
 
 @NgModule({

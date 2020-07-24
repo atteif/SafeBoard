@@ -16,6 +16,7 @@ import { MatFormFieldModule, MatLabel } from '@angular/material/form-field';
 import { MatButtonModule} from '@angular/material/button';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { GooglePlaceModule } from 'ngx-google-places-autocomplete';
 import { from } from 'rxjs';
 
 
@@ -25,7 +26,8 @@ const modules = [
 @NgModule({
     declarations: [
         AppComponent,
-        NavbarComponent 
+        NavbarComponent
+
     ],
     imports: [
         NgbModule,
@@ -34,19 +36,20 @@ const modules = [
         MatSliderModule,
         MatInputModule,
         MatFormFieldModule,
-        MatSelectModule, 
+        MatSelectModule,
         MatButtonModule,
         // MatLabel,
         BrowserAnimationsModule,
-        HttpClientModule,               
+        HttpClientModule,
         FormsModule,
         RouterModule,
         AppRoutingModule,
         ComponentsModule,
-        ExamplesModule        
+        ExamplesModule,
+        GooglePlaceModule
     ],
     providers: [
-        
+
     ],
     bootstrap: [AppComponent]
 })
