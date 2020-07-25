@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+
+
 import {Users} from '../model/Users';
+
+
 import {HttpClient} from '@angular/common/http';
 import {UsersService} from '../../services/users.service';
+
 
 @Component({
   selector: 'app-users',
@@ -28,4 +33,5 @@ export class UsersComponent implements OnInit {
       }
     });
   }
+
 }

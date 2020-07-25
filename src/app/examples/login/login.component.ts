@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.user = new Users();
+        this.user=new Users();
         var body = document.getElementsByTagName('body')[0];
         body.classList.add('login-page');
 
@@ -52,17 +52,11 @@ export class LoginComponent implements OnInit {
     }
 
     login() {
-        this.users=this.loggedUsers.filter(user => user.login == this.user.login).filter(user => user.password == this.user.password)
-        if (this.users.length == 1) {
+       if (this.loggedUsers.filter(user => user.login== this.user.login).filter(user => user.password == this.user.password).length != 0) {
             var navbar = document.getElementsByTagName('nav')[0];
             navbar.hidden = false;
-            this.users.forEach(
-                e => {
-                    this.service.setLoggedUser(e);
-
-                }
-            )
-            //  this.service.setLoggedUser(this.user);
+            this.service.setLoggedUser(this.user);
+            console.log(this.user);
             this.routes.navigateByUrl('/profile');
 
         } else {

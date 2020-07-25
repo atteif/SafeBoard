@@ -4,6 +4,7 @@ import {HttpClient} from '@angular/common/http';
 import {AssociationService} from '../../services/association.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {UsersService} from '../../services/users.service';
 
 @Component({
   selector: 'app-add-association',
@@ -28,7 +29,7 @@ assoForm = new FormGroup({
     'categorie' : new FormControl('', Validators.required)
 });
 
-  constructor(public api: AssociationService, private router: Router) { }
+  constructor(public api: AssociationService,  private router: Router) { }
   ngOnInit(): void {
 
   }

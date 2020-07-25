@@ -28,19 +28,15 @@ export class DonationComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log(this.getAllNeeds());
-        console.log(this.needs);
-       // this.api.updateNeedsObject(this.needs);
-
-        console.log(this.api.updateNeedsObject(this.needs));
-       // this.getAllNeeds();
+        this.getAllNeeds();
         this.getAllData();
+        this.api.updateNeedsObject(this.needs);
         const rellaxHeader = new Rellax('.rellax-header');
+
         const body = document.getElementsByTagName('body')[0];
         body.classList.add('landing-page');
         const navbar = document.getElementsByTagName('nav')[0];
         navbar.classList.add('navbar-transparent');
-      //  window.location.reload();
 
     }
 
@@ -68,8 +64,8 @@ export class DonationComponent implements OnInit {
                     console.log(data);
                     this.needs.push(data);
                 }
-
             });
+
     }
 
     ngOnDestroy() {
@@ -80,7 +76,6 @@ export class DonationComponent implements OnInit {
     }
 
     addDon(need: Needs) {
-        this.api.updateNeedsObject(this.needs);
         this.api.setSelectedNeed(need);
         this.routes.navigateByUrl('/addDon');
     }

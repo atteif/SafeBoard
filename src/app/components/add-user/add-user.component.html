@@ -1,5 +1,5 @@
 <div class="page-header" filter-color="green">
-    <div class="page-header-image" style="background-image:url(assets/img/login.jpg)"></div>
+    <div class="page-header-image" style="background-image:url(/assets/img/login.jpg)"></div>
     <div class="container">
         <div class="col-md-4 content-center">
             <div class="card card-login card-plain">
@@ -10,14 +10,14 @@
                     </div>
                 </div>
                 <div class="content">
-                    <form #f="ngForm">
+                    <form #f="ngForm" (ngSubmit)="onSubmit()">
                         <div class="input-group form-group-no-border input-lg"
                              [ngClass]="{'input-group-focus':focus===true}">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
                             </div>
                             <input type="text" class="form-control" value="firstname" placeholder="First Name..." (focus)="focus=true"
-                                    [(ngModel)]="user.first_name"
+                                   [(ngModel)]="user.first_name"
                                    [ngModelOptions]="{standalone: true}" required #l="ngModel">
                             <div class="alert alert-danger" *ngIf="l.invalid">
                                 <div *ngIf="l.errors?.required">Please enter your first Name</div>
@@ -29,7 +29,7 @@
                                 <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="Last Name..." (focus)="focus=true"
-                                    [(ngModel)]="user.last_name"
+                                   [(ngModel)]="user.last_name"
                                    [ngModelOptions]="{standalone: true}" required #la="ngModel">
                             <div class="alert alert-danger" *ngIf="la.invalid">
                                 <div *ngIf="la.errors?.required">Please enter your Last Name</div>
@@ -41,7 +41,7 @@
                                 <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="Email Address..." (focus)="focus=true"
-                                    [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"
+                                   [(ngModel)]="user.email" [ngModelOptions]="{standalone: true}"
                                    required #a="ngModel">
                             <div class="alert alert-danger" *ngIf="a.invalid">
                                 <div *ngIf="a.errors?.required">Please enter your email Address</div>
@@ -53,7 +53,7 @@
                                 <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
                             </div>
                             <input type="text" class="form-control" placeholder="Tel..." (focus)="focus=true"
-                                    [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}"
+                                   [(ngModel)]="user.tel" [ngModelOptions]="{standalone: true}"
                                    required #t="ngModel">
                             <div class="alert alert-danger" *ngIf="t.invalid">
                                 <div *ngIf="t.errors?.required">Please enter your telephone number</div>
@@ -65,7 +65,7 @@
                                 <span class="input-group-text">  <i class="now-ui-icons users_circle-08"></i></span>
                             </div>
                             <input type="text" data-color="white" class="form-control" placeholder="Address...."
-                                    [(ngModel)]="user.adresse" [ngModelOptions]="{standalone: true}"
+                                   [(ngModel)]="user.adresse" [ngModelOptions]="{standalone: true}"
                                    required #ha="ngModel"/>
                             <div class="alert alert-danger" *ngIf="ha.invalid">
                                 <div *ngIf="ha.errors?.required">Please enter your home address</div>
