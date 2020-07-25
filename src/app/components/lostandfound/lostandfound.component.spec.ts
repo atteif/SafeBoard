@@ -12,7 +12,6 @@ describe('LostandfoundComponent', () => {
     })
     .compileComponents();
   }));
-
   beforeEach(() => {
     fixture = TestBed.createComponent(LostandfoundComponent);
     component = fixture.componentInstance;

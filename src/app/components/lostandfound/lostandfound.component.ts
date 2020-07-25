@@ -11,6 +11,7 @@ import { EventEmitter } from 'protractor';
 import { Router } from '@angular/router';
 
 @Component({
+  
   selector: 'app-lostandfound',
   templateUrl: './lostandfound.component.html',
   styleUrls: ['./lostandfound.component.scss'],
