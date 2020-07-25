@@ -29,6 +29,7 @@
     "@ng-bootstrap/ng-bootstrap": "6.0.0",
     "ajv": "6.10.0",
     "ajv-keywords": "3.4.0",
+    "bootstrap": "^4.0.0",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
     "copy-webpack-plugin": "5.0.1",

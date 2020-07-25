@@ -28,6 +28,7 @@ import { RefugeChildComponent } from './refuge-child/refuge-child.component';
 import { NewRefugeeComponent } from './new-refugee/new-refugee.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {ChartsModule} from 'ng2-charts';
+import { BarBenChartComponent } from './bar-ben-chart/bar-ben-chart.component';
 
 @NgModule({
     imports: [
@@ -65,7 +66,9 @@ import {ChartsModule} from 'ng2-charts';
 
         NewRefugeeComponent,
 
-        BarChartComponent
+        BarChartComponent,
+
+        BarBenChartComponent
     ],
     exports: [ ComponentsComponent ]
 })
