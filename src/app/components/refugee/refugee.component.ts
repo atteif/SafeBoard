@@ -20,7 +20,6 @@ export class RefugeeComponent implements OnInit {
   ngOnInit(): void {
     this.getAllRefugees();
     this.getSum();
-    console.log(this.sum);
   }
 
   getAllRefugees() {
@@ -31,14 +30,12 @@ export class RefugeeComponent implements OnInit {
         for (const data of resp.body) {
         this.refugees.push(data);        }
         });
-    console.log(this.refugees);
   }
   addRefugee() {
     this.routes.navigateByUrl('/newRefugee');
   }
 
     isComplete(ref) {
-    console.log(ref);
     console.log(ref.is_complete);
     ref.is_complete = true;
       this.service
@@ -53,7 +50,6 @@ export class RefugeeComponent implements OnInit {
   getSum() {
     this.service.getSum().subscribe(resp =>  {
       const keys = resp.headers.keys();
-      console.log(keys);
       this.headers = keys.map(key =>
           `${key}: ${resp.headers.get(key)}`);
       for (const data of resp.body) {
