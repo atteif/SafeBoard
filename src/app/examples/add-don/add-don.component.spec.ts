@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LostandfoundComponent } from './lostandfound.component';
+import { AddDonComponent } from './add-don.component';
 
-describe('LostandfoundComponent', () => {
-  let component: LostandfoundComponent;
-  let fixture: ComponentFixture<LostandfoundComponent>;
+describe('AddDonComponent', () => {
+  let component: AddDonComponent;
+  let fixture: ComponentFixture<AddDonComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LostandfoundComponent ]
+      declarations: [ AddDonComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(LostandfoundComponent);
+    fixture = TestBed.createComponent(AddDonComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
