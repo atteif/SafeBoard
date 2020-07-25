@@ -38,9 +38,16 @@ export class RefugeeService {
         return this.http.get<any[]>(
             `http://localhost/SafeDev/web/app_dev.php/sumByNeeds`, {observe: 'response'})
     }
+    updateBen(ben: Benevole) : Observable<Benevole>{
+        return this.http.post<Benevole>('http://localhost/SafeDev/web/app_dev.php/updateBenevole/' + ben.id , ben);
+    }
 
-    public getCountRef(location): Observable<HttpResponse<any[]>> {
+    public getCountRef(): Observable<HttpResponse<any[]>> {
         return this.http.get<any[]>(
-            `http://localhost/SafeDev/web/app_dev.php/getCountRef/`+location, {observe: 'response'})
+            `http://localhost/SafeDev/web/app_dev.php/getCountRef`, {observe: 'response'})
+    }
+    public getCountBen(): Observable<HttpResponse<any[]>> {
+        return this.http.get<any[]>(
+            `http://localhost/SafeDev/web/app_dev.php/getcountBen`, {observe: 'response'})
     }
 }

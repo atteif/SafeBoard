@@ -95,6 +95,14 @@
                 </div>
             </div>
             <div class="form-group">
+                <label>Value</label>
+                <input type="text" class="form-control" name="email" [(ngModel)]="ref.value" #v="ngModel"
+                       required   minlength="3" >
+                <div class="alert-danger" *ngIf="v.invalid">
+                    <p *ngIf="v.errors.required">value is required</p>
+                </div>
+            </div>
+            <div class="form-group">
                 <label>Email</label>
                 <input type="text" class="form-control" name="email" [(ngModel)]="ref.email" #v="ngModel"
                        required   minlength="3" >
@@ -111,6 +119,6 @@
                 </div>
             </div>
         </div>
-        <button type ="button" class="btn btn-success" [disabled]="f.invalid" (click)="addRefugee()" routerLink="refugee" >Submit</button>
+        <button type ="button" class="btn btn-success" (click)="addRefugee()" routerLink="refugee" >Submit</button>
     </form>
 </div>

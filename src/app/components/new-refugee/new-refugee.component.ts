@@ -35,21 +35,23 @@ export class NewRefugeeComponent implements OnInit {
 
   }
   addRefugee() {
-
- this.getBenByloc(this.ref.location);
- console.log(this.ref.location);
+      this.getAllBen();
+      console.log(this.benevoless);
     this.benevole=  this.benevoless.filter(value => value.location == this.ref.location).filter(value => value.nb_ref <5);
+    if(this.benevole.length==0){
+        this.benevole=  this.benevoless.filter(value => value.nb_ref <5);
+    }
+
     console.log(this.benevole[0].id);
     this.ref.benevole_id = this.benevole[0].id;
     console.log(this.benevole[0].nb_ref);
-    this.benevole[0].nb_ref ++ ;
+      this.benevole[0].nb_ref =  this.benevole[0].nb_ref + 1 ;
+      if( this.benevole[0].nb_ref==5){
+          this.benevole[0].is_available = false;
+      }
+      console.log(this.benevole[0]);
+ this.updateBene(this.benevole[0]);
 console.log(this.benevole[0].nb_ref);
-    if(this.benevole[0].nb_ref>=5){
-        this.benevole[0].is_available == false;
-    }
-     console.log(
-      this.benevole);
-console.log(this.ref);
     this.refugeeService
         .addRefugee(this.ref)
         .subscribe(resp => {
@@ -81,7 +83,13 @@ getAllBen(){
     });
 }
 
-    isComplete() {
-        
+    updateBene(ben) {
+        console.log(ben);
+        this.refugeeService.updateBen(ben)
+            .subscribe(resp => {
+                return this.spresp.push(resp);
+            });
+        this.route.navigateByUrl('/refugee')
     }
+
 }

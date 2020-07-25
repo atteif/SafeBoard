@@ -30,6 +30,7 @@ import { RefugeChildComponent } from './refuge-child/refuge-child.component';
 import { NewRefugeeComponent } from './new-refugee/new-refugee.component';
 import { BarChartComponent } from './bar-chart/bar-chart.component';
 import {ChartsModule} from 'ng2-charts';
+import { BarBenChartComponent } from './bar-ben-chart/bar-ben-chart.component';
 import { EventComponent } from './event/event.component';
 import { EventChildComponent } from './event-child/event-child.component';
 import { AddEventComponent } from './add-event/add-event.component';
@@ -80,12 +81,17 @@ import { AddUserComponent } from './add-user/add-user.component';
         NewRefugeeComponent,
 
         BarChartComponent,
+        RefSprint
+
+        BarBenChartComponent
+
         EventComponent,
         EventChildComponent,
         AddEventComponent,
         UsersComponent,
         UsersChildComponent,
         AddUserComponent
+
     ],
     exports: [ ComponentsComponent ]
 })

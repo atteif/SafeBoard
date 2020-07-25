@@ -9,6 +9,7 @@ lastname: string;
 email: string;
 mobile: number;
 is_complete : boolean;
+value: number;
 
 
 }
